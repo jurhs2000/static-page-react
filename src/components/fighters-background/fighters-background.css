@@ -1,0 +1,25 @@
+.container {
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    
+    img {
+        position: relative;
+        animation: fighters-transition 0.9s cubic-bezier(0,0,.69,.38) 2s 1 normal none;
+    }
+}
+
+@keyframes fighters-transition {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    7% {
+        clip-path: polygon(0 0, 7% 0, 0 100%, 0 100%);
+    }
+    93% {
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}

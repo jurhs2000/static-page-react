@@ -1,0 +1,52 @@
+$title-separation: 100px;
+$title-width: 1925px;
+$name-width: 1166px;
+$container-width: 2563px;
+
+.container {
+    background-image: url('../../assets/new-fighter-background/hero_new18_bg_pc.png');
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    width: $container-width;
+    overflow-x: hidden;
+
+    .title {
+        display: flex;
+        flex-direction: initial;
+        animation: right-left-full-width-title 30s linear 0s infinite normal none;
+        
+        img {
+            content: url('../../assets/new-fighter-background/hero_new_txt_pc.png');
+            margin-right: $title-separation;
+        }
+    }
+
+    .new-fighter-name {
+        display: flex;
+        flex-direction: initial;
+        animation: right-left-full-width-name 10s linear 0s infinite normal none;
+        position: relative;
+        z-index: 1;
+
+        img {
+            content: url('../../assets/new-fighter-background/hero_new18_txt_pc_en.png');
+            margin-right: $title-separation;
+        }
+    }
+
+    .new-fighter-image {
+        content: url('../../assets/new-fighter-background/hero_new18_img_pc.webp');
+        position: relative;
+        top: -497px;
+    }
+}
+
+@keyframes right-left-full-width-title {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-$title-width - $title-separation)); }
+}
+
+@keyframes right-left-full-width-name {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-$name-width - $title-separation)); }
+}
