@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+$nintendo-color: #E60012;
+$black-bg: #000000CC;
+$gray-icon: #666;
+$font-light-gray: #ccc;
+$font: 'Roboto', sans-serif;
+$user-color: #8c8c8c;
+$user-hover: #00d2be;
+
+.container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    svg {
+        position: relative;
+    }
+
+    p {
+        position: relative;
+        color: $font-light-gray;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 600;
+        font-stretch: condensed;
+    }
+
+    .nintendo {
+        background-color: $nintendo-color;
+        position: relative;
+        width: 124px;
+        height: 47px;
+        z-index: 1;
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            path {
+                fill: white;
+                transform: scale(0.42) translate(-230px, -8px);
+            }
+        }
+    }
+
+    .home {
+        width: 81px;
+        height: 34px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap ;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+            left: -95px;
+            width: 18px;
+            height: 18px;
+            path {
+                fill: $gray-icon;
+                transform: scale(0.22);
+                transition: .1s;
+            }
+        }
+
+        p {
+            left: -90px;
+            font-stretch: expanded;
+        }
+
+        &:before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            background-color: $black-bg;
+            width: 130%;
+            height: 34px;
+            left: -20px;
+            transform: skewX(-29deg);
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: $font-light-gray;
+                }
+            }
+        }
+    }
+
+    .center {
+        background-color: black;
+        flex-grow: 1;
+        height: 1px;
+        position: relative;
+        top: 2px;
+    }
+
+    .user {
+        position: relative;
+        width: 106px;
+        height: 36px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap ;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+            top: 2px;
+            width: 12px;
+            height: 14px;
+            path {
+                fill: $user-color;
+                transform: scale(0.5);
+                transition: .1s;
+            }
+        }
+
+        p {
+            top: 5px;
+            left: -12px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            background-color: $black-bg;
+            width: 111%;
+            height: 36px;
+            right: -20px;
+            transform: skewX(29deg);
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: $user-hover;
+                }
+            }
+        }
+    }
+
+    .switch {
+        background-color: $nintendo-color;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        z-index: 1;
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            path {
+                fill: white;
+                transform: scale(0.28);
+            }
+        }
+    }
+}

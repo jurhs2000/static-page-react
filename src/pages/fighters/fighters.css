@@ -1,24 +1,6 @@
-$container-width: 2563px;
-$container-height: 963px;
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-
-    & > div {
-        position: relative;
-    }
-
-    & > div:first-child {
-        z-index: 2;
-        width: $container-width;
-        height: $container-height;
-    }
-
-    & > div:last-child {
-        z-index: 1;
-        top: -$container-height;
-    }
 }

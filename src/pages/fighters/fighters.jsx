@@ -1,13 +1,17 @@
 import React from 'react'
-import styles from './fighters.css'
+import DisplayFighters from '../../components/display-fighters/display-fighters'
+import DlcFighters from '../../components/dlc-fighters/dlc-fighters'
 import FightersBackground from '../../components/fighters-background/fighters-background'
-import NewFighterBackground from '../../components/new-fighter-background/new-fighter-background'
+import TopBar from '../../components/top-bar/top-bar'
+import styles from './fighters.css'
 
 const Fighters = () => {
   return (
     <div className={styles.container}>
+      <TopBar />
       <FightersBackground />
-      <NewFighterBackground />
+      <DlcFighters />
+      <DisplayFighters />
     </div>
   )
 }

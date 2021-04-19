@@ -26,8 +26,8 @@ module.exports = {
     'comma-dangle': [
       'error',
       {
-        arrays: 'always',
-        objects: 'always',
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
         imports: 'never',
         exports: 'always',
         functions: 'never',

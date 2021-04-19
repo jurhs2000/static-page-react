@@ -2,13 +2,15 @@ $title-separation: 100px;
 $title-width: 1925px;
 $name-width: 1166px;
 $container-width: 2563px;
+$container-height: 863px;
 
 .container {
-    background-image: url('../../assets/new-fighter-background/hero_new18_bg_pc.png');
     background-repeat: no-repeat;
     padding-top: 100px;
     width: $container-width;
+    height: $container-height;
     overflow-x: hidden;
+    overflow-y: hidden;
 
     .title {
         display: flex;
@@ -16,7 +18,6 @@ $container-width: 2563px;
         animation: right-left-full-width-title 30s linear 0s infinite normal none;
         
         img {
-            content: url('../../assets/new-fighter-background/hero_new_txt_pc.png');
             margin-right: $title-separation;
         }
     }
@@ -29,13 +30,11 @@ $container-width: 2563px;
         z-index: 1;
 
         img {
-            content: url('../../assets/new-fighter-background/hero_new18_txt_pc_en.png');
             margin-right: $title-separation;
         }
     }
 
     .new-fighter-image {
-        content: url('../../assets/new-fighter-background/hero_new18_img_pc.webp');
         position: relative;
         top: -497px;
     }
