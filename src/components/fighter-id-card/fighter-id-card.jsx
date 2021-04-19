@@ -13,12 +13,12 @@ const FighterIdCard = ({ displayNum, displayName, file, color, series, dlc }) =>
       <div className={styles.info} style={{ backgroundImage: `url(https://www.smashbros.com/assets_v2/img/fighter/thumb_h/${file}.png)` }}>
         <p>{displayNum}</p>
         <p>{displayName}</p>
+        <svg>
+          {
+            series.map((path, index) => <path key={index} d={path} />)
+          }
+        </svg>
       </div>
-      <svg>
-        {
-          series.map((path, index) => <path key={index} d={path} />)
-        }
-      </svg>
     </div>
   )
 }
@@ -27,13 +27,14 @@ FighterIdCard.propTypes = {
   displayNum: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
   file: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
   series: PropTypes.array,
   dlc: PropTypes.bool.isRequired,
 }
 
 FighterIdCard.defaultProps = {
   series: [],
+  color: '',
 }
 
 export default FighterIdCard

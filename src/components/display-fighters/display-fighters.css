@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+$dark-gray: rgb(59, 59, 59);
+$green-logo-lucid: #01bd36da;
+$green-logo: #01bd36;
+$top-elevation: 350px;
+$font: 'Roboto Condensed', sans-serif;
+$separator-gray: #666666;
+$button-font-color: #cccccc;
+$light: #333333;
+
+.container {
+    position: relative;
+    top: -$top-elevation;
+    z-index: 3;
+
+    .header {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        background-image: url('../../assets/fighters/ptn_diagonal_12.webp');
+        background-size: 6px;
+        height: 55px;
+        margin-bottom: 2px;
+
+        & > svg {
+            width: 100px;
+            height: 100%;
+
+            path {
+                fill: $green-logo-lucid;
+                transform: translateY(-25px);
+            }
+        }
+
+        & > p {
+            color: white;
+            font-family: $font;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .order {
+            display: flex;
+            align-items: center;
+            border-left: 2px solid $separator-gray;
+            height: 31px;
+            margin-left: 15px;
+            padding-left: 25px;
+
+            & > div {
+                width: 19px;
+                height: 19px;
+
+                svg {
+                    path {
+                        fill: $green-logo;
+                        transform: scale(0.1);
+                        transition: .2s;
+                    }
+
+                    .reverse {
+                        transform: scale(0.1, -0.1) translateY(-200px);
+                    }
+                }
+            }
+
+            button {
+                background-color: transparent;
+                color: $button-font-color;
+                font-family: $font;
+                font-size: 14px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                outline: inherit;
+                transition: .1s;
+
+                &:hover {
+                    color: $green-logo;
+                }
+            }
+        }
+
+        
+        .space {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .link {
+            position: relative;
+            top: 3px;
+            left: -166px;
+            width: 385px;
+            height: 49px;
+            z-index: 0;
+            background-color: black;
+
+            p {
+                position: relative;
+                color: $button-font-color;
+                font-family: $font;
+                font-size: 16px;
+                font-weight: bold;
+                margin-right: 25px;
+                z-index: 1;
+            }
+
+            svg {
+                position: relative;
+                width: 74px;
+                height: 49px;
+                z-index: -1;
+
+                path {
+                    fill: $green-logo;
+                    transform: scale(0.36);
+                }
+            }
+
+            div {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                position: relative;
+                width: 143%;
+                height: 100%;
+                background-image: url('../../assets/fighters/ptn_diagonal_12.webp');
+                background-size: 6px;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    right: 69px;
+                    width: 60%;
+                    height: 100%;
+                    background-color: $light;
+                    transform: skewX(-29deg);
+                    position: absolute;
+                    z-index: -1;
+                }
+    
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    right: -49px;
+                    width: 120px;
+                    height: 100%;
+                    background-color: $separator-gray;
+                    transform: skewX(-29deg);
+                    position: absolute;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    p {
+                        color: $green-logo;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1px;
+        background-color: $dark-gray;
+    }
+}
