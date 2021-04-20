@@ -18,11 +18,11 @@ $space-width: 176px;
     }
 
     .appear {
-        animation: fighters-transition 0.6s cubic-bezier(0,0,.69,.38) 0s 1 normal none;
+        animation: fighters-transition 0.6s cubic-bezier(0,0,.69,.38) 2s 1 normal backwards;
     }
 
     .last {
-        animation: fighters-transition-out 0.6s cubic-bezier(0,0,.69,.38) 0s 1 normal forwards;
+        animation: fighters-transition-out 0.6s cubic-bezier(0,0,.69,.38) 2s 1 normal forwards;
     }
 
     .none {

@@ -29,6 +29,7 @@ const IMG_TIME_ON = 5000
 const FightersBackground = () => {
   const [actualBg, setActualBg] = useState(-1)
   const [first, setFirst] = useState(true)
+  const [scroll, setScroll] = useState(window.scrollY)
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,8 +42,12 @@ const FightersBackground = () => {
     }, IMG_TIME_ON * BGS.length)
   }, [])
 
+  window.onscroll = () => {
+    setScroll(window.scrollY)
+  }
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ transform: `translateY(${scroll * 0.5}px)` }}>
       <NewFighterBackground />
       <div className={styles.title} style={TITLE} />
       {

@@ -20,7 +20,7 @@ const BottomBar = () => {
         <div className={styles.buy}>
           <svg>
             {
-              SHOP_ICON.map(figure => (figure.type === 'path') ? <path d={figure.d} /> : <circle cx={figure.cx} cy={figure.cy} r={figure.r} />)
+              SHOP_ICON.map((figure, index) => (figure.type === 'path') ? <path key={index} d={figure.d} /> : <circle key={index} cx={figure.cx} cy={figure.cy} r={figure.r} />)
             }
           </svg>
           <p>Buy Now</p>
