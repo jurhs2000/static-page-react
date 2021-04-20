@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+$icon-color: #aeaeae;
+$icon-color-hover: #8f8f8f;
+$font: 'Roboto Condensed', sans-serif;
+
+.container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    z-index: 3;
+
+    .logo {
+        position: absolute;
+        background-image: url('../../assets/bottom-bar/bottom_logo_bg.webp');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 274px;
+        height: 97px;
+        bottom: 0;
+
+        img {
+            width: 186px;
+        }
+    }
+
+    .center {
+        flex-grow: 1;
+    }
+
+    .menus {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .buy, .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 91px;
+            height: 91px;
+            background-image: url('../../assets/bottom-bar/globalsidenav-open__btn_pc.png');
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 91px;
+                height: 91px;
+                background-image: url('../../assets/bottom-bar/globalsidenav-open__btn_pc_hover.png');
+                opacity: 0;
+                transition: .2s;
+            }
+
+            p {
+                position: relative;
+                top: 50px;
+                font-family: $font;
+                color: $icon-color;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0;
+            }
+        }
+
+        .buy {
+            width: 75px;
+            height: 75px;
+            background-image: url('../../assets/bottom-bar/globalsidenav-buynow__btn_pc.png');
+
+            &:before {
+                width: 75px;
+                height: 75px;
+                background-image: url('../../assets/bottom-bar/globalsidenav-buynow__btn_pc_hover.png');
+            }
+
+            svg {
+                fill: $icon-color;
+                position: relative;
+                top: -3px;
+                left: -2px;
+                width: 100%;
+                height: 100%;
+                transition: .2s;
+                transform: scale(.35);
+
+                * {
+                    transform: translateY(-10px);
+                }
+            }
+
+            p {
+                top: -20px;
+                font-size: 11px;
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+
+                svg {
+                    fill: $icon-color-hover;
+                }
+            }
+        }
+
+        .menu {
+            .menu_icon {
+                width: 31px;
+                height: 3px;
+                position: relative;
+                top: 34px;
+                background-color: $icon-color;
+
+                &:before, &:after {
+                    content: '';
+                    display: block;
+                    width: 31px;
+                    height: 3px;
+                    position: relative;
+                    background-color: $icon-color;
+                }
+
+                &:before {
+                    top: -9px;
+                }
+
+                &:after {
+                    bottom: -6px;
+                }
+            }
+        }
+    }
+}
