@@ -20,6 +20,8 @@ $font: 'Roboto Condensed', sans-serif;
         height: 97px;
         bottom: -69px;
         transition: .4s;
+        transition-timing-function: ease-out;
+        cursor: pointer;
 
         img {
             width: 186px;
@@ -61,6 +63,7 @@ $font: 'Roboto Condensed', sans-serif;
                 background-image: url('../../assets/bottom-bar/globalsidenav-open__btn_pc_hover.png');
                 opacity: 0;
                 transition: .2s;
+                transition-timing-function: ease-out;
             }
 
             p {

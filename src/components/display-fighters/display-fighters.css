@@ -176,6 +176,8 @@ $light: #333333;
     .display-series {
         display: flex;
         justify-content: center;
+        margin: 15px;
+
         div {
             display: flex;
             flex-direction: row;
