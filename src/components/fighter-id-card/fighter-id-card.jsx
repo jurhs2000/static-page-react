@@ -11,8 +11,8 @@ const FighterIdCard = ({ displayNum, displayName, file, color, series, dlc }) =>
       className={styles.container}
       style={dlc ? { backgroundImage: `url(${require(`../../assets/${ASSETS_FOLDER}/bg_dlc${((parseInt(displayNum) - NO_DLC_FIGHTERS_NUM) === 1) ? '' : (parseInt(displayNum) - NO_DLC_FIGHTERS_NUM)}.webp`)})` } : {}}>
       <div className={styles.info} style={{ backgroundImage: `url(https://www.smashbros.com/assets_v2/img/fighter/thumb_h/${file}.png)` }}>
-        <p>{displayNum}</p>
-        <p>{displayName}</p>
+        <p>{displayNum.replace('-', '\n-\n')}</p>
+        <p>{displayName.replace('<br>', '\n')}</p>
         <svg>
           {
             series.map((path, index) => <path key={index} d={path} />)

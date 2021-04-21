@@ -9,6 +9,7 @@ $font: 'Roboto Condensed', sans-serif;
     width: 100%;
     bottom: 0px;
     display: flex;
+    z-index: 3;
 
     .logo {
         position: relative;

@@ -39,6 +39,8 @@ $hover-lucid: #ffffff0c;
             font-size: 20px;
             font-weight: 800;
             font-stretch: condensed;
+            white-space: pre-line;
+            line-height: 20px;
             z-index: 1;
 
             &:first-child {
