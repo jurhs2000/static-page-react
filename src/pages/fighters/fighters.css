@@ -2,6 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: hidden;
+
+    .elevation {
+        position: absolute;
+        top: 425px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .content-fit-center {
+            width: fit-content;
+        }
+    }
 }

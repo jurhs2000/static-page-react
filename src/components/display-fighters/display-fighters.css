@@ -3,7 +3,6 @@
 $dark-gray: rgb(59, 59, 59);
 $green-logo-lucid: #01bd36da;
 $green-logo: #01bd36;
-$top-elevation: 350px;
 $font: 'Roboto Condensed', sans-serif;
 $separator-gray: #666666;
 $button-font-color: #cccccc;
@@ -11,7 +10,7 @@ $light: #333333;
 
 .container {
     position: relative;
-    top: -$top-elevation;
+    bottom: -166px;
     z-index: 3;
 
     .header {
@@ -172,5 +171,41 @@ $light: #333333;
         grid-template-rows: auto;
         gap: 1px;
         background-color: $dark-gray;
+    }
+
+    .display-series {
+        display: flex;
+        justify-content: center;
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+    
+            svg {
+                fill: $green-logo;
+                width: 20px;
+                height: 17px;
+                margin-right: 10px;
+
+                path {
+                    transform: scale(0.05);
+                }
+            }
+
+            p {
+                font-family: $font;
+                font-size: 16px;
+                font-weight: bold;
+                color: black;
+                transition: .1s;
+            }
+
+            &:hover {
+                p {
+                    color: $green-logo;
+                }
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ $hover-lucid: #ffffff2c;
 
 .container {
     position: relative;
-    top: -$top-elevation;
+    bottom: -126px;
     z-index: 3;
 
     .header {

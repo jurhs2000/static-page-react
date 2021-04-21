@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './bottom-bar.css'
 
 const ASSETS_FOLDER = 'bottom-bar'
@@ -10,14 +10,26 @@ const SHOP_ICON = [
 ]
 
 const BottomBar = () => {
+  const [isSticked, setIsSticked] = useState(false)
+  useEffect(() => {
+    const observer = new IntersectionObserver((records, observer) => {
+      setIsSticked(records[0].isIntersecting)
+    }, {
+      root: null,
+      rootMargin: `${document.getElementsByTagName('footer')[0].clientHeight}px`,
+      threshold: 1.0,
+    })
+    observer.observe(document.getElementsByTagName('footer')[0])
+  }, [])
+
   return (
-    <div className={styles.container}>
-      <div className={styles.logo}>
+    <div className={styles.container} >
+      <div className={`${styles.logo} ${(isSticked) ? styles['logo-cover'] : ''}`}>
         <img src={require(`../../assets/${ASSETS_FOLDER}/bottom_logo_en.webp`)} />
       </div>
       <div className={styles.center} />
       <div className={styles.menus}>
-        <div className={styles.buy}>
+        <div className={`${styles.buy} ${(isSticked) ? styles.cover : ''}`}>
           <svg>
             {
               SHOP_ICON.map((figure, index) => (figure.type === 'path') ? <path key={index} d={figure.d} /> : <circle key={index} cx={figure.cx} cy={figure.cy} r={figure.r} />)
@@ -25,8 +37,8 @@ const BottomBar = () => {
           </svg>
           <p>Buy Now</p>
         </div>
-        <div className={styles.menu}>
-          <div className={styles.menu_icon} />
+        <div className={`${styles.menu} ${(isSticked) ? styles.cover : ''}`}>
+          <div className={styles['menu-icon']} />
           <p>MENU</p>
         </div>
       </div>
